@@ -1,0 +1,18 @@
+.framed-image {
+    border: 5px solid #333;
+    border-radius: 10px;
+    padding: 5px;
+    background-color: #fff;
+    max-width: 300px;
+}
+
+.background {
+    background-color: #f0f0f0;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.custom-box {
+    width: 300px;
+    height: 300px;
+}
