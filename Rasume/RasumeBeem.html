@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sakunna Sangrutsamee</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
     <link href='https://fonts.googleapis.com/css?family=Trirong' rel='stylesheet'>
+    <link rel="stylesheet" href="style.css">
     <style>
         body {
             font-family: 'Trirong';
@@ -19,50 +19,106 @@
 <body class="bg-light p-4">
     <div class="container">
         <div class="row">
+            <!-- เนื้อหาซ้าย -->
             <div class="col-md-4">
-                <div class="card mb-4 shadow-sm">
-                    <img src="https://via.placeholder.com/450" class="card-img-top" alt="Profile Picture"
+                <div class="card mb-2 rounded p-4 shadow">
+                    <img src="images/catt.jpg" class="card-img-top mb-4" alt="Profile Picture"
                         style="height: 250px; object-fit: cover;">
+                    <ul class="list-group no-border">
+                        <li class="list-group-item">ชื่อ : สกุลณา แสงรัศมี</li>
+                        <li class="list-group-item">ชื่อเล่น : บีม</li>
+                    </ul>
+                </div>
+                <div class="card rounded p-4 shadow">
+                    <div class="card-body">
+                        <h4>ข้อมูลส่วนตัว</h4>
+                        <ul class="list-group no-border">
+                            <li>วันเกิด : 20 พฤษภาคม 2546</li>
+                            <li>อายุ : 21 ปี</li>
+                            <li>เบอร์โทรศัพท์ : 094-446-4140</li>
+                            <li>อีเมล : sakunna.sangrutsamee@gmail.com</li>
+                            <li>Github : https://github.com/Sakunna-B</li>
+                            <li>ที่อยู่ : เขตบางแค กรุงเทพฯ 10160 </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card rounded p-4 shadow">
+                    <div class="card-body">
+                        <h4>การศึกษา(กำลังศึกษา)</h4>
+                        <ul class="list-group no-border">
+                            <li>ชั้นปี : 3</li>
+                            <li>คณะ : วิศวกรรมศาสตร์</li>
+                            <li>เบอร์โทรศัพท์ : คอมพิวเตอร์</li>
+                            <li>เกรดเฉลี่ย : 3.73</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card rounded p-4 shadow">
+                    <div class="card-body">
+                        <h4>จุดแข็ง</h4>
+                        <ul class="list-group no-border">
+                            <li>วันเกิด : ใส่ใจรายละเอียด</li>
+                            <li>อายุ : สามารถทำงานเป็นทีมได้</li>
+                            <li>สามารถทำงานเป็นทีมได้</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
+
+            <!-- เนื้อหาขวา -->
             <div class="col-md-8">
                 <h1 class="text-center border rounded p-4 shadow mb-4">
                     Sakunna Sangrutsamee
                 </h1>
-                <div>
-                    <ul class="tabs">
-                        <li><a href="#เป้าหมาย">เป้าหมาย</a></li>
-                        <li><a href="#ความสนใจ">ความสนใจ</a></li>
-                        <li><a href="#ทักษะ">ทักษะ</a></li>
-                    </ul>
-                </div>
-                <div class="tab-box mb-4">
-                    <div class="mb-4" id="เป้าหมาย ">
-                        <h3>เป้าหมายในการทำงาน</h3>
-                        <p>กไก่ทอดหาดใหญ่hhhhhhhhhhhhhhhhhhhhhhhhhfcjfjjdghhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh</p>
+
+                <!-- หัวtabขวา -->
+                <ul class="nav nav-tabs mb-4">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#เป้าหมาย" data-bs-toggle="tab">เป้าหมาย</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#ทักษะ" data-bs-toggle="tab">ทักษะ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#ความสนใจ" data-bs-toggle="tab">ความสนใจ</a>
+                    </li>
+                </ul>
+
+                <!-- tabขวา -->
+                <div class="tab-content shadow">
+                    <div class="tab-pane fade show active" id="เป้าหมาย">
+                        <div class="card mb-4">
+                            <div class="card-body">
+                                <h4>เป้าหมายในการทำงาน</h4>
+                                <p class="text-break">
+                                    มีความสนใจในสายวิศวกรรมคอมพิวเตอร์โดยมีความสนใจเรียนรู้หลากหลายด้าน เช่น Developer,
+                                    Data และเทคโนโลยีที่เกี่ยวข้องเพื่อพัฒนาทักษะและนำความรู้ประสบการณ์
+                                    ไปประยุกต์ใช้ในการทำงานจริงในอนาคต</p>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div class="tab-box mb-4">
-                    <div class="mb-4" id="ความสนใจ ">
-                        <h3>ความสนใจ</h3>
-                        <p>กไก่ทอดหาดใหญ่</p>
+                    <div class="tab-pane fade" id="ทักษะ">
+                        <div class="card mb-4">
+                            <div class="card-body">
+                                <h4>ทักษะ</h4>
+                                <p class="text-break">▪สนใจกานพัฒนาแอปพลิเคชัน ด้วย flutter<br>▪การออกแบบUX/UI<br>▪กำลังเรียนรู้การจัดการข้อมูล SQL<br>▪กำลังเรียนรู้ การสร้างเว็บ<br>▪เรียนรู้การเขียน HTML&CSS , JavaScript เพิ่มเติม</p>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div class="tab-box mb-4">
-                    <div class="mb-4" id="ทักษะ">
-                        <h3>ทักษะ</h3>
-                        <p>กไก่ทอดหาดใหญ่</p>
+                    <div class="tab-pane fade" id="ความสนใจ">
+                        <div class="card mb-4">
+                            <div class="card-body">
+                                <h4>ความสนใจ</h4>
+                                <p class="text-break">▪มีความรู้พื้นฐานในการใช้ Python , C# <br>▪มีความรู้พื้นฐานในการออกแบบUX/UI ด้วย Flutter<br>▪มีความรู้พื้นฐานเกี่ยวกับ SQL</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-    </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-        crossorigin="anonymous"></script>
-
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>

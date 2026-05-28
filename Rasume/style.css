@@ -1,39 +1,20 @@
-body {
-    background: #fffff3;
-}
-p {
-    font-size: 14px;
-}
-.tab-box {
-    padding: 20px;
-    background: #fff;
-    border-radius: 0px 10px 10px 10px;
-    width: auto; 
-    max-width: 100%; 
-    text-align: justify;
-    line-height: 22px;
-    border: 1px solid #0080b3;
-}
-ul {
-    display: flex;        
-    list-style: none;     
-    padding: 0;           
-    margin: 0;          
+.nav-tabs .nav-link {
+  color: #423d33;
+  background-color: #bff87e;
+  border-radius: 5px;
+  padding: 10px 15px;
 }
 
-
-ul li a {
-    display: block;
-    text-decoration: none;
-    color: #4d4d4d;
-    background: #cfd8e8;
-    font-weight: 400;
-    font-size: 15px;
-    padding: 10px 18px;
-    border-radius: 5px 5px 0 0px;
+.nav-tabs .nav-link:hover {
+  background-color: #5ba000;
+  color: #fff;
 }
 
-ul li a:hover {
-    background: #00acc8;
-    color: #fff;
+.nav-tabs .nav-link.active {
+  background-color: #f8ffed;
+  color: #2c2c2c;
+}
+.no-border .list-group-item {
+  border: none;          
+  box-shadow: none;    
 }
