@@ -1,0 +1,17 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Itim&display=swap');
+
+body, h1, h2, h3, h4, h5, h6, p, div, span, button {
+    font-family: 'Itim', cursive !important;
+}
+body {
+    background-color: #a4c2e6 !important; 
+    margin: 0;
+    padding: 0;
+}
+.custom-photo {
+    height: 250px;           
+    width: 100%;               
+    object-fit: contain;       
+    background-color: #212529;
+}
