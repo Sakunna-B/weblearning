@@ -1,17 +1,40 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Itim&display=swap');
 
-body, h1, h2, h3, h4, h5, h6, p, div, span, button {
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+div,
+span,
+button {
     font-family: 'Itim', cursive !important;
 }
+
 body {
-    background-color: #a4c2e6 !important; 
+    background-color: #e7f0c5 !important;
     margin: 0;
     padding: 0;
 }
+
 .custom-photo {
-    height: 250px;           
-    width: 100%;               
-    object-fit: contain;       
+    height: 250px;
+    width: 100%;
+    object-fit: contain;
     background-color: #212529;
+}
+
+.custom-carousel-img {
+    height: 300px;
+    object-fit: contain;
+    max-width: 100%;
+    width: auto;
+}
+@media (max-width: 768px) {
+    .custom-carousel-img {
+        height: 200px; 
+    }
 }

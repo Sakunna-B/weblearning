@@ -1,43 +1,46 @@
-// 📌 จุดจัดการข้อมูลจุดเดียว (อยู่ในไฟล์ script.js)
-const myWebtoons = [
-    { id: 1, title: "เรื่องสั้นไร้สติ", genre: "คอมเมดี้", img: "images/1.jpg", isNew: true },
-    { id: 2, title: "ศึกจอมเวททลายสวรรค์", genre: "แอคชั่น แฟนตาซี", img: "images/2.jpg", isNew: false },
-    { id: 3, title: "แค้นนี้ต้องชำระ", genre: "ดราม่า", img: "images/3.jpg", isNew: true },
-    { id: 4, title: "ชีวิตประจำวันของฉัน", genre: "ตลกคอมเมดี้", img: "images/1.jpg", isNew: false },
-    { id: 5, title: "รักใสๆ หัวใจสี่ดวง", genre: "โรแมนติก", img: "images/2.jpg", isNew: false }
-];
+document.addEventListener('DOMContentLoaded', function () { // ตรวจสอบว่า DOM ถูกโหลดแล้ว
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const toonItems = document.querySelectorAll('.toon-item');
+    const searchInput = document.getElementById('search-input');
+    const searchForm = document.getElementById('search-form');
+    filterButtons.forEach(button => {
+        button.addEventListener('click', function (e) {
+            e.preventDefault();
+            const selectedFilter = this.getAttribute('data-filter');
 
-// ⚙️ ระบบอัตโนมัติ: อ่านข้อมูลด้านบนแล้วสร้างเป็นการ์ดโชว์บนหน้าเว็บ
-function renderWebtoons() {
-    const grid = document.getElementById('webtoon-grid');
-    if (!grid) return; // ป้องกันข้อผิดพลาดหากหาไอดีไม่เจอ
-    
-    let html = '';
-
-    myWebtoons.forEach((item) => {
-        const badge = item.isNew ? `<span class="position-absolute top-0 start-0 bg-danger text-white px-2 py-0-5 m-2 rounded small" style="z-index: 1; font-size: 0.75rem;">ใหม่</span>` : '';
-
-        html += `
-            <div class="col">
-                <a href="#" class="text-decoration-none text-dark">
-                    <div class="card h-100 border-0 shadow-sm position-relative" style="border-radius: 10px; overflow: hidden;">
-                        ${badge}
-                        <img src="${item.img}" class="card-img-top object-fit-cover" alt="${item.title}" style="height: 200px;">
-                        <div class="card-body p-2">
-                            <div class="d-flex align-items-center mb-1">
-                                <h3 class="text-secondary fw-bold me-2 m-0">${item.id}</h3>
-                                <h6 class="card-title fw-bold m-0 text-truncate">${item.title}</h6>
-                            </div>
-                            <p class="card-text text-muted small mb-0 text-truncate">${item.genre}</p>
-                        </div>
-                    </div>
-                </a>
-            </div>
-        `;
+            toonItems.forEach(item => {
+                const itemCategory = item.getAttribute('data-category');
+                if (selectedFilter === 'all' || itemCategory.includes(selectedFilter)) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        });
     });
+    //ค้นหาตามชื่อ
+   function filterToonsByName() {
+        // ดึงคำที่ผู้ใช้พิมพ์ และแปลงเป็นตัวพิมพ์เล็ก (LowerCase) เพื่อให้พิมพ์พิมพ์เล็กหรือใหญ่ก็เจอเหมือนกัน
+        const searchText = searchInput.value.toLowerCase().trim();
+        // วนลูปตรวจเช็คการ์ตูนทุกเรื่องทีละกล่อง
+        toonItems.forEach(item => {
+            // ไปดึงข้อความที่เป็นชื่อเรื่องการ์ตูน (ดึงจากคลาส .card-title ด้านในการ์ด)
+            const titleElement = item.querySelector('.card-title');
+            const toonTitle = titleElement ? titleElement.textContent.toLowerCase() : '';
 
-    grid.innerHTML = html;
-}
-
-// สั่งให้ระบบเริ่มทำงาน
-renderWebtoons();
+            // ตรวจสอบว่าชื่อการ์ตูนมีคำที่เราพิมพ์ค้นหาอยู่หรือไม่
+            if (toonTitle.includes(searchText)) {
+                item.style.display = 'block'; // ถ้าเจอคำนั้น ให้แสดงการ์ด
+            } else {
+                item.style.display = 'none';  // ถ้าไม่เจอคำนั้น ให้ซ่อนการ์ดไว้
+            }
+        });
+    }
+    // ดักจับเหตุการณ์แบบ Real-time:ค้นหาทันทีไม่ต้องกดปุ่ม Search
+    searchInput.addEventListener('input', filterToonsByName);
+    // ดักจับเหตุการณ์ตอนกดปุ่ม Search หรือกด Enter ในช่องค้นหา
+    searchForm.addEventListener('submit', function(e) {
+        e.preventDefault(); // ป้องกันหน้าเว็บรีเฟรชตัวเอง
+        filterToonsByName();
+    });
+});

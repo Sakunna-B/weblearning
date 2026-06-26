@@ -11,38 +11,47 @@
 </head>
 
 <body>
-    <div class="container-fluid px-0 mb-4">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid px-0  ">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#">BEEMTOON</a>
+                <a class="navbar-brand" id="taphome" href="http://127.0.0.1:5500/weptoon/hometoon.html">BEEMTOON</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
+                <!-- เมนู -->
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="#">หน้าแรก</a>
                         </li>
+                        <!-- รายการประเภทแบบกดได้-->
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                                 data-bs-toggle="dropdown" aria-expanded="false">
                                 ประเภท
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="#">แอคชั่น</a></li>
-                                <li><a class="dropdown-item" href="#">โรแมนติก</a></li>
-                                <li><a class="dropdown-item" href="#">คอมเมดี้</a></li>
-                                <li><a class="dropdown-item" href="#">แฟนตาซี</a></li>
-                                <li><a class="dropdown-item" href="#">ดราม่า</a></li>
+                                <li><a class="dropdown-item filter-btn" href="#" data-filter="all">ทั้งหมด</a></li>
+                                <li><a class="dropdown-item filter-btn" href="#" data-filter="action">แอคชั่น</a>
+                                </li>
+                                <li><a class="dropdown-item filter-btn" href="#" data-filter="romance">โรแมนติก</a>
+                                </li>
+                                <li><a class="dropdown-item filter-btn" href="#" data-filter="comedy">คอมเมดี้</a>
+                                </li>
+                                <li><a class="dropdown-item filter-btn" href="#" data-filter="fantasy">แฟนตาซี</a>
+                                </li>
+                                <li><a class="dropdown-item filter-btn" href="#" data-filter="drama">ดราม่า</a></li>
                             </ul>
                         </li>
                     </ul>
-                    <form class="d-flex">
-                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <form class="d-flex" id="search-form">
+                        <input class="form-control me-2" type="search" id="search-input" placeholder="Search"
+                            aria-label="Search">
                         <button class="btn btn-outline-success" type="submit">Search</button>
                     </form>
+
                 </div>
             </div>
         </nav>
@@ -50,7 +59,7 @@
     <div class="container">
         <div class="row">
             <!-- โฆษณา-->
-            <div class="col-12 mb-4">
+            <div class="col-12 mt-4" style="padding-top: 60px;">
                 <div id="carouselExampleControlsNoTouching" class="carousel slide carousel-dark" data-bs-touch="true"
                     data-bs-interval="true">
                     <div class="carousel-inner" style="border-radius: 10px; overflow: hidden;">
@@ -76,14 +85,14 @@
             </div>
             <!--หัวข้อ-->
             <div class="col-12 mt-4">
-                <h1>Popular Webtoons</h1>
+                <h1>All Toons</h1>
             </div>
             <!-- รายการการ์ตูน-->
             <div class="col-12">
-                <div class="row row-cols-5 g-2 mt-1">
+                <div class="row row-cols-2 row-cols-md-3 row-cols-lg-5 g-2 mt-1 ">
                     <!-- เรื่องที่ 1 -->
-                    <div class="col">
-                        <a href="#" class="text-decoration-none text-dark">
+                    <div class="col toon-item" data-category="comedy all">
+                        <a href="http://127.0.0.1:5500/weptoon/toon.html" class="text-decoration-none text-dark">
                             <div class="card h-100 border-0 shadow-sm position-relative"
                                 style="border-radius: 10px; overflow: hidden;">
                                 <span
@@ -93,7 +102,6 @@
                                     style="height: 200px;">
                                 <div class="card-body p-2">
                                     <div class="d-flex align-items-center mb-1">
-                                        <h3 class="text-danger fw-bold me-2 m-0">1</h3>
                                         <h6 class="card-title fw-bold m-0 text-truncate">เรื่องสั้นไร้สติ</h6>
                                     </div>
                                     <p class="card-text text-muted small mb-0 text-truncate">คอมเมดี้</p>
@@ -102,7 +110,7 @@
                         </a>
                     </div>
                     <!-- เรื่องที่ 2 -->
-                    <div class="col">
+                    <div class="col toon-item" data-category="romance drama all">
                         <a href="#" class="text-decoration-none text-dark">
                             <div class="card h-100 border-0 shadow-sm position-relative"
                                 style="border-radius: 10px; overflow: hidden;">
@@ -113,40 +121,39 @@
                                     style="height: 200px;">
                                 <div class="card-body p-2">
                                     <div class="d-flex align-items-center mb-1">
-                                        <h3 class="text-secondary fw-bold me-2 m-0">2</h3>
-                                        <h6 class="card-title fw-bold m-0 text-truncate">ชื่อเรื่องที่ 2</h6>
+                                        <h6 class="card-title fw-bold m-0 text-truncate">เป็นเพราะฝน</h6>
                                     </div>
-                                    <p class="card-text text-muted small mb-0 text-truncate">แอคชั่น</p>
+                                    <p class="card-text text-muted small mb-0 text-truncate">ดราม่า</p>
+                                    <p class="card-text text-muted small mb-0 text-truncate">โรแมนติก</p>
                                 </div>
                             </div>
                         </a>
                     </div>
                     <!-- เรื่องที่ 3 -->
-                    <div class="col">
+                    <div class="col toon-item" data-category="drama romance all">
                         <a href="#" class="text-decoration-none text-dark">
                             <div class="card h-100 border-0 shadow-sm" style="border-radius: 10px; overflow: hidden;">
                                 <img src="images/3.jpg" class="card-img-top object-fit-cover" alt="เรื่องที่ 3"
                                     style="height: 200px;">
                                 <div class="card-body p-2">
-                                    <div class="d-flex align-items-center mb-1">
-                                        <h3 class="text-secondary fw-bold me-2 m-0">3</h3>
-                                        <h6 class="card-title fw-bold m-0 text-truncate">ชื่อเรื่องที่ 3</h6>
+                                    <div class="d-flex align-items-center mb-1 " data-name="">
+                                        <h6 class="card-title fw-bold m-0 text-truncate">ตามใจรัก</h6>
                                     </div>
-                                    <p class="card-text text-muted small mb-0 text-truncate">ดราม่า</p>
+                                    <p class="card-text text-muted small mb-0 text-truncate">ดราม่า/p>
+                                    <p class="card-text text-muted small mb-0 text-truncate">โรแมนติก</p>
                                 </div>
                             </div>
                         </a>
                     </div>
                     <!-- เรื่องที่ 4 -->
-                    <div class="col">
+                    <div class="col toon-item" data-category="fantasy all">
                         <a href="#" class="text-decoration-none text-dark">
                             <div class="card h-100 border-0 shadow-sm" style="border-radius: 10px; overflow: hidden;">
-                                <img src="images/1.jpg" class="card-img-top object-fit-cover" alt="เรื่องที่ 4"
+                                <img src="images/4.jpg" class="card-img-top object-fit-cover" alt="เรื่องที่ 4"
                                     style="height: 200px;">
                                 <div class="card-body p-2">
                                     <div class="d-flex align-items-center mb-1">
-                                        <h3 class="text-secondary fw-bold me-2 m-0">4</h3>
-                                        <h6 class="card-title fw-bold m-0 text-truncate">ชื่อเรื่องที่ 4</h6>
+                                        <h6 class="card-title fw-bold m-0 text-truncate">ปุ๋ยไม่อยากเป็นแมว</h6>
                                     </div>
                                     <p class="card-text text-muted small mb-0 text-truncate">แฟนตาซี</p>
                                 </div>
@@ -154,17 +161,49 @@
                         </a>
                     </div>
                     <!-- เรื่องที่ 5 -->
-                    <div class="col">
+                    <div class="col toon-item" data-category="comedy fantasy all">
                         <a href="#" class="text-decoration-none text-dark">
                             <div class="card h-100 border-0 shadow-sm" style="border-radius: 10px; overflow: hidden;">
-                                <img src="images/2.jpg" class="card-img-top object-fit-cover" alt="เรื่องที่ 5"
+                                <img src="images/5.jpg" class="card-img-top object-fit-cover" alt="เรื่องที่ 5"
                                     style="height: 200px;">
                                 <div class="card-body p-2">
                                     <div class="d-flex align-items-center mb-1">
-                                        <h3 class="text-secondary fw-bold me-2 m-0">5</h3>
-                                        <h6 class="card-title fw-bold m-0 text-truncate">ชื่อเรื่องที่ 5</h6>
+                                        <h6 class="card-title fw-bold m-0 text-truncate">น้องวาฬไม่ร้องครับ</h6>
                                     </div>
-                                    <p class="card-text text-muted small mb-0 text-truncate">ตลกคอมเมดี้</p>
+                                    <p class="card-text text-muted small mb-0 text-truncate">คอมเมดี้</p>
+                                    <p class="card-text text-muted small mb-0 text-truncate">แฟนตาซี</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- เรื่องที่ 6 -->
+                    <div class="col toon-item" data-category="comedy action all">
+                        <a href="#" class="text-decoration-none text-dark">
+                            <div class="card h-100 border-0 shadow-sm" style="border-radius: 10px; overflow: hidden;">
+                                <img src="images/6.jpg" class="card-img-top object-fit-cover" alt="เรื่องที่ 6"
+                                    style="height: 200px;">
+                                <div class="card-body p-2">
+                                    <div class="d-flex align-items-center mb-1">
+                                        <h6 class="card-title fw-bold m-0 text-truncate">ฟกช้ำดำเขียว</h6>
+                                    </div>
+                                    <p class="card-text text-muted small mb-0 text-truncate">แอ็คชั่น</p>
+                                    <p class="card-text text-muted small mb-0 text-truncate">คอมเมดี้</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- เรื่องที่ 7 -->
+                    <div class="col toon-item" data-category="action fantasy all">
+                        <a href="#" class="text-decoration-none text-dark">
+                            <div class="card h-100 border-0 shadow-sm" style="border-radius: 10px; overflow: hidden;">
+                                <img src="images/7.jpg" class="card-img-top object-fit-cover" alt="เรื่องที่ 7"
+                                    style="height: 200px;">
+                                <div class="card-body p-2">
+                                    <div class="d-flex align-items-center mb-1">
+                                        <h6 class="card-title fw-bold m-0 text-break">แม่มดวัยเกษียณผันตัวเป็นหัวหน้ามาเฟีย</h6>
+                                    </div>
+                                    <p class="card-text text-muted small mb-0 text-truncate">แฟนตาซี</p>
+                                    <p class="card-text text-muted small mb-0 text-truncate">แอ็คชั่น</p>
                                 </div>
                             </div>
                         </a>
@@ -173,8 +212,8 @@
             </div>
         </div>
     </div>
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
 </body>
 
 </html>
