@@ -21,10 +21,9 @@ body {
 }
 
 .custom-photo {
-    height: 250px;
+    height: 450px; 
+    object-fit: cover; 
     width: 100%;
-    object-fit: contain;
-    background-color: #212529;
 }
 
 .custom-carousel-img {
@@ -42,7 +41,7 @@ body {
     opacity: 0; 
 }
 .tool_area {
-    background: #c1dd80;
+    background: #dbebb6;
     color: #fff;
     font-size: 17px;
     font-weight: 400;
@@ -51,4 +50,12 @@ body {
     position: fixed;
     width: 100%;
     z-index: 100;
+}
+.epteem {
+    background: #697945;
+    color: #fff;
+}
+.dropdown-menu .dropdown-item.active {
+    background-color: #def8c6; 
+    color: #242222; 
 }

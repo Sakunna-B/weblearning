@@ -1,20 +1,76 @@
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 25vh;
+}
+
+body {
+  font-family: 'Trirong', sans-serif;
+}
+
+.nav-tabs {
+  border-bottom: none !important;
+  gap: 8px;
+  /* เพิ่มระยะห่างระหว่างปุ่มเมนู */
+}
+
 .nav-tabs .nav-link {
-  color: #423d33;
-  background-color: #bff87e;
-  border-radius: 5px;
-  padding: 10px 15px;
+  color: #423d33 !important;
+  background-color: #6d8d49;
+  border: none !important;
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-weight: bold;
+  transition: all 0.3s ease;
 }
 
 .nav-tabs .nav-link:hover {
   background-color: #5ba000;
-  color: #fff;
+  color: #fff !important;
+  transform: translateY(-2px);
 }
 
 .nav-tabs .nav-link.active {
-  background-color: #f8ffed;
-  color: #2c2c2c;
+  background-color: #f8ffed !important;
+  color: #2c2c2c !important;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
 }
+
 .no-border .list-group-item {
-  border: none;          
-  box-shadow: none;    
+  border: none !important;
+  box-shadow: none !important;
+  background-color: transparent !important;
+  padding: 8px 0;
+}
+
+header {
+  background-color: #423d33;
+  padding: 40px 20px;
+  text-align: center;
+  color: #bff87e;
+  margin: -24px -24px 24px -24px;
+  border-radius: 0 !important;
+}
+
+footer {
+  background-color: #555145;
+  padding: 20px;
+  text-align: center;
+  color: #f8ffed;
+  margin-top: auto;
+  margin-left: -24px;
+  margin-right: -24px;
+  margin-bottom: -24px;
+  border-radius: 0 !important;
+
+}
+
+.card[id] {
+  scroll-margin-top: 0;
+}
+
+.container-fluid {
+  padding-bottom: 0 !important;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
